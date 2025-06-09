@@ -171,6 +171,31 @@
             }
         }
 
+        /***** side-bar *****/
+
+        .sidebar-image-wrapper {
+            background-color: #f9fafb;
+            overflow-x: hidden;
+            text-align: center;
+        }
+
+        .sidebar-image {
+            max-width: 100%;
+            height: auto;
+            transition: transform 0.3s ease;
+        }
+
+        /* Rotate image on small screens */
+        @media (max-width: 768px) {
+            .sidebar-image {
+                transform: rotate(90deg);
+                width: auto;
+                height: 100vw;
+                overflow-x: hidden;
+                /* Fit height to screen width */
+            }
+        }
+
         /**** grid-images****/
 
         .sticky-gallery-wrapper {
@@ -570,7 +595,7 @@
         }
 
         .feature-button {
-            border: 1px solid #77C58D   ;
+            border: 1px solid #77C58D;
             background: transparent;
             color: #77C58D;
             padding: 10px 20px;
@@ -606,10 +631,24 @@
             justify-content: center;
             gap: 0;
             flex-wrap: wrap;
+            overflow-x: hidden;
         }
 
         .image-row1 img {
-            max-width: 200px;
+            max-width: 100%;
+            width: 200px;
+            height: auto;
+            margin: 10px;
+        }
+
+        .macbook {
+            width: 400px;
+        }
+
+        @media (max-width: 768px) {
+            .macbook {
+                width: 100%;
+            }
         }
 
         .feature-layout {
@@ -1304,11 +1343,12 @@
         <img src="on-demand_launch_marketplace.webp" alt="Cart Preview">
     </section>
 
-    <div style="background-color: #f9fafb; overflow-x: hidden;">
-        <img src="side_bar.png" alt="side_bar"
-            style="max-width: 100%; height: auto; display: block; margin-left: 20px;">
+    <div class="sidebar-image-wrapper">
+        <img src="side_bar.png" alt="side_bar" class="sidebar-image">
     </div>
-    
+
+
+
     <div class="sticky-gallery-wrapper">
         <section class="sticky-gallery">
             <div class="sticky-row">
@@ -1503,7 +1543,8 @@
     </section>
 
     <section class="tech-suite" style="background-color: #f9fafb;">
-        <h1 style="color: #134872; font-size: 40px; font-weight: 800; margin-bottom: 20px;">Get A Complete Tech Suite</h1>
+        <h1 style="color: #134872; font-size: 40px; font-weight: 800; margin-bottom: 20px;">Get A Complete Tech Suite
+        </h1>
         <h2 style="color: #134872; font-size: 32px;">To Manage And Scale Your Multi Service Marketplace</h2>
 
         <!-- Tab Buttons -->
@@ -1526,7 +1567,7 @@
         <div class="tab-content1 active" id="admin">
             <div class="image-row1">
                 <img src="group@2x-2.webp" alt="Admin Panel 1">
-                <img src="macbook-silver.webp" alt="Admin Panel 2" style="max-width: 600px;">
+                <img src="macbook-silver.webp" alt="Admin Panel 2" class="macbook">
                 <img src="group@2x.webp" alt="Admin Panel 3">
             </div>
         </div>
